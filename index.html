@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>kpp</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><h1><a name='header-n759' class='md-header-anchor '></a>KPP</h1><h2><a name='header-n761' class='md-header-anchor '></a>Zakres czynności</h2><p><strong>BLS</strong> - basic life support<br/><strong>ILTS</strong> - KPP - international trauma life support<br/><strong>ALS</strong> - advanced life support (lekarze pielęgniarki)<br/><strong>ERC 2015</strong> - co 5 lat<br/><strong>PRR</strong> - Polska Rada Resuscytacji<br/><strong>AHA</strong> - American Heart Association</p><p><strong>Ratownik KPP</strong> może podać 47 leków.</p><h2><a name='header-n764' class='md-header-anchor '></a>Karteki</h2><p>S - specjalistyczne (lekarz + 2 ratowników/lekarz + pielęgniarka)<br/>P - podstawowa (2 ratowników)<br/>N - neonatologiczna (dla dzieci)<br/>T - transportowa  </p><p>Stay and fight / Load and go</p><p><strong>Mediana</strong> dojazdu od miejsca wypadku:</p><ul><li>teren zabudowany - 8min</li><li>poza miastem - 15min</li></ul><h3><a name='header-n773' class='md-header-anchor '></a>Kody pilne</h3><p><strong>1</strong> - do 7 min karekta<br/><strong>2</strong> - do 20 min karekta</p><h2><a name='header-n775' class='md-header-anchor '></a>Złota godzina</h2><p>Od momentu urazu, a nie telefonu.</p><h2><a name='header-n777' class='md-header-anchor '></a>Platynowe 10 minut</h2><p><strong>ABC resustytacji</strong></p><p><strong>A</strong> - airway - rękoczyn czoło żuchwa<br/><strong>B</strong> - breathing   ocena oddechu (10sec)<br/><strong>C</strong> - circulation - RKO 30:2<br/><strong>D</strong> - defibrylacja<br/><strong>E</strong> - electroshock / everything else</p><h2><a name='header-n780' class='md-header-anchor '></a>Łańcuch przeżycia</h2><ol start='' ><li>wezwanie pomocy</li><li>wczesne CPR</li><li>wczesna defibrylacja</li><li>wczesna pomoc specjalistyczna</li></ol><h2><a name='header-n789' class='md-header-anchor '></a>Ocena świadomości</h2><p><strong>S</strong> - świadomość<br/><strong>O</strong> - oddech<br/><strong>S</strong> - skóra  </p><h2><a name='header-n792' class='md-header-anchor '></a>Skala AVPU</h2><p><strong>A</strong> - alert - osoba świadoma<br/><strong>V</strong> - voice - reaguje na głos<br/><strong>P</strong> - pain - reaguje na ból<br/><strong>U</strong> - unresponsive - brak reakcji</p><h2><a name='header-n794' class='md-header-anchor '></a>Wywiad SAMPLE</h2><p><strong>S</strong> - sytuacja - oceń sytauację<br/><strong>A</strong> - alergie - usuń alergeny<br/><strong>M</strong> - medykamenty - leki stałe<br/><strong>P</strong> - przebyte choroby - zabiegi operacyjne<br/><strong>L</strong> - lunch (last food) - ostatni posiłek<br/><strong>E</strong> - eventualne okoliczności zdarzenia</p><h2><a name='header-n796' class='md-header-anchor '></a>Wezwanie pomocy</h2><h3><a name='header-n797' class='md-header-anchor '></a>Numery ratunkowe</h3><p><strong>112</strong> - CPR (centrum powiadomienia ratunkowego)<br/><strong>999</strong> - pogotowie ratunkowe<br/><strong>998</strong> - państwowa straz pożarna<br/><strong>997</strong> - policja</p><h3><a name='header-n799' class='md-header-anchor '></a>Rozmowa</h3><ul><li><strong>Co?</strong> - co sie stało?</li><li><strong>Komu?</strong> - ile jest poszkodowanych i kto?</li><li><strong>Gdzie?</strong> - dokładny adres/współrzedne geograficzne</li><li>Nie rozłączaj się, czekaj na instrukcję lub pytania</li></ul><h2><a name='header-n809' class='md-header-anchor '></a>Środki ochrony osobistej</h2><ul><li>rekawiczki lateksowe (w razie potrzeby kilka warstw)</li><li>okulary ochronne (CE)</li><li>maseczki z jednokierunkowym przepływem powietrza</li></ul><p><strong>SWD</strong> - system wsparcia działań ratownictwa medycznego<br/><strong>0,70-0,90</strong> - odpowiedni poziom cukru</p><h2><a name='header-n818' class='md-header-anchor '></a>Układ nerwowy</h2><h3><a name='header-n819' class='md-header-anchor '></a>Ośrodkowy układ nerwowy (CUN)</h3><ul><li>mózgowe</li><li>rdzeń kręgowy</li><li>podstawa czaszki</li><li>podniebienie</li><li>szczelina - środkowa linia na podniebieniu</li></ul><h4><a name='header-n830' class='md-header-anchor '></a>Symtomy</h4><p>Śińce okularowe i objaw Battle&#39;a wystepują przy uszkodzeniu czaszkowym - nie ruszamy, stabilizujemy, kontakt z pacjentem.</p><h3><a name='header-n833' class='md-header-anchor '></a>Obwodowy układ nerwowy (OUN)</h3><ul><li>nerwy kończyn</li><li>nerwy klatki piersiowej</li><li>nerwy brzucha</li><li>unerwienie skóry</li></ul><h4><a name='header-n842' class='md-header-anchor '></a>7 kręgów szyjnych (C)</h4><ul><li>12 kręgów piersiowych</li><li>5 kręgów lędźwiowych</li><li>5 kręgów krzyżowych</li></ul><p>W głowie mamy układ:</p><ul><li>przywspółczulny</li><li>parasympatyczny</li></ul><p>Międzyżebra:</p><ul><li>linia pachwowa</li><li>środek obojczyka (w to miejsce wbijamy grubą igłę)</li></ul><p>Do 5 przestrzeni między żebrami - penetrowane są płuca.
+Poniżej 6 (i od niej) to narządy.</p><h2><a name='header-n864' class='md-header-anchor '></a>Kobiety w ciąży</h2><p>Pozycja boczna ustalona na lewym boku.</p><h2><a name='header-n866' class='md-header-anchor '></a>Funkcje niektórych narządów</h2><ol start='' ><li>Nadnercza - produkują adrenalinę i dopaminę. Znajduja się pomiędzy kr. lędźwiowymi i kr. krzyżowymi.</li></ol><h2><a name='header-n870' class='md-header-anchor '></a>Złamania</h2><ol start='' ><li>Miednicy - odrazu zawiązujemy, ubytek do 4l krwi.</li><li>Kości udowej - ubytek do 3l krwi. Szyjka kości udowej najczęściej łamie się u dzieci i osób starszych.</li></ol><h2><a name='header-n876' class='md-header-anchor '></a>Mięśnie</h2><h3><a name='header-n877' class='md-header-anchor '></a>Autonomiczny układ nerwowy</h3><p>Działa bez naszej woli.<br/>Mięśnie gładkie.</p><h3><a name='header-n879' class='md-header-anchor '></a>Narządy które możemy kontrolować</h3><p>Mięśnie poprzecznie prażkowane - miofibryle - czerwone i białe włókna.</p><h2><a name='header-n881' class='md-header-anchor '></a>Układ oddechowy</h2><h3><a name='header-n882' class='md-header-anchor '></a>Górne drogi oddechowe </h3><ul><li>nos </li><li>jama ustna</li></ul><h3><a name='header-n887' class='md-header-anchor '></a>Dolne drogi oddechowe </h3><ul><li>krtań</li><li>tchawica</li><li>oskrzela</li><li>płuca</li></ul><h3><a name='header-n898' class='md-header-anchor '></a>Powietrze</h3><ul><li>21% tlen</li><li>78% azot</li></ul><h3><a name='header-n904' class='md-header-anchor '></a>Płuca</h3><ul><li>Prawa strona - 3 płaty płucne</li><li>Lewa strona - 2 płaty płucne (bo serce)</li></ul><p>Manewr Sellicka - gdy ktoś się dusi / dławi.</p><h3><a name='header-n911' class='md-header-anchor '></a>Choroba nurkowa</h3><p>W stawach kolanowych i łokciowych zbiera się azot.</p><p>I stopnia - azot w krwiobiegu. </p><p>Więcej w &quot;ABC nurkowania&quot;</p><h2><a name='header-n915' class='md-header-anchor '></a>Parametry oddechu</h2><figure><table><thead><tr><th>&nbsp;</th><th>Prawidłowe</th><th>Nieprawidłowe</th></tr></thead><tbody><tr><td><strong>Dorosły</strong></td><td>10-20/min</td><td>&lt; 8 i &gt; 24/min</td></tr><tr><td><strong>Dziecko</strong></td><td>15-30/min</td><td>&lt; 15 i &gt; 30/min</td></tr><tr><td><strong>Niemowlę</strong></td><td>25-50/min</td><td>&lt; 25 i &gt; 60/min</td></tr></tbody></table></figure><h2><a name='header-n933' class='md-header-anchor '></a>Układ krwionośny</h2><p>1/14 wagi ciała to ilość krwi.<br/>Ubytek 1/4 doprowadza do wstrządu.</p><h2><a name='header-n935' class='md-header-anchor '></a>Serce</h2><p>Posiada 4 komory.</p><p>P. komora i L. przedsionek - płuca.<br/>L. komora i P. przedsionek - cały organizm.</p><h3><a name='header-n938' class='md-header-anchor '></a>Frakcja</h3><p>Poniżej 35 - rozrusznik<br/>Poniżej 25 - przeszczep serca</p><p>Żyły mają cieńsze ściany od tętnic (z cz. ciała do serca).</p><p>Tętnice posiadają grube i elastyczne ściany (z serca do cz. ciała).</p><p>Włośniczka łączy tętnice z żyłami, dostarcza tlen do komórek.</p><figure><table><thead><tr><th>Akcja serca</th><th>Tętno</th><th>Ciśnienie</th></tr></thead><tbody><tr><td>AS</td><td>HR</td><td>RR</td></tr><tr><td><strong>rytm zatokowy</strong></td><td>AS/HR</td><td>60-100/min</td></tr><tr><td><strong>bradykardia</strong></td><td>AS/HR</td><td>&lt; 60/min</td></tr><tr><td><strong>tachykardia</strong></td><td>AS/HR</td><td>&gt; 100/min</td></tr></tbody></table></figure><p>Prawidłowe ciśnienie krwi RR 120/80mm Hg<br/>hipertonia/nadciśnienie RR &gt; 14<br/>hiptonia/niedociśnienie RR &lt; 90  </p><p><strong>Maska brzuszna</strong> - ie wolno bagatelizować - zawał bez bólu, test topniowy szybko wskaże zawał. Ból brzucha.</p><p><strong>Triada Cushinga</strong> - objawy które mogą doprowadzić do udaru lub krwotoku środkowoczaszkowego.</p><p><strong>Utrata przytomności</strong> - brak reakcji na głos i ból (+ wiotkość mięśni)</p><p>Podczas wstrząsu i niewydolności podajemy tlen.</p><p><strong>Epilepsja</strong> - brak reakcji na głos i ból, asekurujemy głowę i udrozniamy drigi oddechowe.</p><p><strong>Pulsometr</strong> zawsze na palec wskazujący.</p><h3><a name='header-n971' class='md-header-anchor '></a>Algorytm MONA</h3><p><strong>M</strong>orfina<br/><strong>O</strong>xygen<br/><strong>N</strong>intergliceryna<br/><strong>A</strong>spiryna</p><h2><a name='header-n973' class='md-header-anchor '></a>Poparzenia</h2><p>3 stopnia - powyżej 10%</p><p>1% to dłoń osoby poparzonej</p><h3><a name='header-n976' class='md-header-anchor '></a>Reguła 9</h3><p>głowa i szyja - 9%<br/>klatka i brzuch - 18%<br/>plecy i barki - 18%<br/>reka - 9%<br/>nogi - 18%</p><h2><a name='header-n978' class='md-header-anchor '></a>Algorytm</h2><ol start='' ><li>Sprawdź rekacje</li><li>Zawołaj pomoc</li><li>Udrożnij drogi oddechowe</li><li>Sprawdź oddech</li><li>Wezwij pomoc</li><li>Utrzymaj drożność dróg oddechowych</li><li>Kontroluj stan poszkodowanego</li></ol><p><strong>Asystolia</strong> - brak elektrycznej i mechanicznej aktywności serca.</p><h3><a name='header-n995' class='md-header-anchor '></a>Kiedy nie przechodzimy do RKO?</h3><ol start='' ><li>Stęzenie pośmierne (sztywny - trwa 3 doby, potem rozkład)</li><li>Brak głowy</li></ol><p><strong>Wstrząs anafilaktyczny</strong> - adrenalina 0,3 mg od 10 do 15 min można podać 2 taka sama dawkę.</p><p>Max defibrylator - 360 dżuli (4 dźule na 1 kg masy ciała)</p><h3><a name='header-n1003' class='md-header-anchor '></a>Tlenoterapia</h3><p><strong>Czynna</strong> - worek samorosprężalny z filtrem
+<strong>Bierna</strong> - przytomny bądź nie poprawnie oddycha.</p><p><strong>Saturacja</strong> poniżej 95 - powinno się podac tlen.</p><h3><a name='header-n1007' class='md-header-anchor '></a>Butla z tlenem</h3><p>Tylko podmiot leczniczy może zabezpieczać.<br/>Tlen tylko na receptę.<br/>Zawsze sprawdź stan butli</p><p>Cińnienie 1atm - 996hPa. W butli 20Hpa = 200atm</p><p><strong>Skale</strong> - 25 / 15 / 12</p><p><strong>Tlen + tłuszcz = wybuch</strong></p><p><strong>50atm w rezerwie</strong></p><p><strong>100atm = 1km pod wodą</strong></p><p>2.7l - standardowa butla ratownicza</p><h4><a name='header-n1015' class='md-header-anchor '></a>Użytkowanie</h4><h5><a name='header-n1016' class='md-header-anchor '></a>Początek</h5><ol start='' ><li>Odkręcamy zawór główny</li><li>Ustawiamy skalę na 25</li><li>Podłączamy cewnik do maski</li></ol><h5><a name='header-n1023' class='md-header-anchor '></a>Zakończenie</h5><ol start='' ><li>Zakręcam główny zawór</li><li>Zakręcam reduktor</li></ol></div>
+</body>
+</html>
