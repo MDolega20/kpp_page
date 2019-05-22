@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/fav-ico.png" />
-    <title>kpp</title>
+    <title>KPP</title>
     <style type="text/css">
       html {
         overflow-x: initial !important;
@@ -35,6 +35,7 @@
         line-height: 1.42857;
         overflow-x: hidden;
         background: inherit;
+        tab-size: 4;
       }
       iframe {
         margin: auto;
@@ -257,6 +258,9 @@
       .CodeMirror-gutters {
         border-right: 0px;
         background-color: inherit;
+      }
+      .CodeMirror-linenumber {
+        user-select: none;
       }
       .CodeMirror {
         text-align: left;
@@ -680,6 +684,393 @@
         border: 0px;
       }
 
+      :root {
+        --control-text-color: #777;
+        --side-bar-bg-color: #f6f8fa;
+      }
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+      body {
+        font-family: "SF UI Text", "PingFang SC", -apple-system,
+          -apple-system-body, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+          微软雅黑, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+        color: rgb(36, 41, 46);
+        line-height: 1.5;
+        font-weight: 400;
+        -webkit-font-smoothing: unset;
+      }
+      #write {
+        max-width: 860px;
+        margin: 0px auto;
+        padding: 20px 30px 100px;
+      }
+      #write > ol:first-child,
+      #write > ul:first-child {
+        margin-top: 30px;
+      }
+      body > :first-child {
+        margin-top: 0px !important;
+      }
+      body > :last-child {
+        margin-bottom: 0px !important;
+      }
+      a {
+        color: rgb(65, 131, 196);
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        position: relative;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+        cursor: text;
+        color: rgb(20, 35, 49);
+      }
+      h1:hover a.anchor,
+      h2:hover a.anchor,
+      h3:hover a.anchor,
+      h4:hover a.anchor,
+      h5:hover a.anchor,
+      h6:hover a.anchor {
+        text-decoration: none;
+      }
+      h1 code,
+      h1 tt,
+      h2 code,
+      h2 tt,
+      h3 code,
+      h3 tt,
+      h4 code,
+      h4 tt,
+      h5 code,
+      h5 tt,
+      h6 code,
+      h6 tt {
+        font-size: inherit;
+      }
+      h1 {
+        text-align: center;
+        padding-bottom: 0.3em;
+        font-size: 2.25em;
+        line-height: 1.2;
+        margin: 1em auto 1.2em;
+      }
+      h1::after {
+        border-bottom: 2px dashed rgb(175, 236, 158);
+        content: "";
+        width: 100px;
+        display: block;
+        margin: 0.2em auto 0px;
+        height: 2px;
+      }
+      h2 {
+        font-size: 1.75em;
+        padding-left: 9px;
+        line-height: 1.4;
+        border-left: 6px solid rgb(204, 229, 255);
+      }
+      h3 {
+        font-size: 1.5em;
+        line-height: 1.43;
+      }
+      h3::before {
+        border-radius: 50%;
+        background-color: rgb(158, 208, 255);
+        content: "";
+        width: 6px;
+        display: inline-block;
+        height: 6px;
+        vertical-align: middle;
+        margin-bottom: 0.18em;
+        margin-right: 8px;
+      }
+      #write > h3.md-focus::before,
+      #write > h4.md-focus::before {
+        background-color: transparent;
+        width: auto;
+        height: auto;
+      }
+      h4 {
+        font-size: 1.25em;
+      }
+      h4::before {
+        background-color: rgb(158, 208, 255);
+        content: "";
+        width: 6px;
+        display: inline-block;
+        height: 2px;
+        vertical-align: middle;
+        margin-bottom: 0.18em;
+        margin-right: 8px;
+      }
+      h5 {
+        font-size: 1em;
+      }
+      h6 {
+        font-size: 1em;
+        color: rgb(119, 119, 119);
+      }
+      blockquote,
+      dl,
+      ol,
+      p,
+      table,
+      ul {
+        margin: 0.8em 0px;
+      }
+      li > ol,
+      li > ul {
+        margin: 0px;
+      }
+      hr {
+        height: 0.25em;
+        padding: 0px;
+        margin: 24px 0px;
+        background-color: rgb(225, 228, 232);
+        border: 0px;
+      }
+      a:first-child h1,
+      a:first-child h2,
+      a:first-child h3,
+      a:first-child h4,
+      a:first-child h5,
+      a:first-child h6,
+      body > h1:first-child,
+      body > h1:first-child + h2,
+      body > h2:first-child,
+      body > h3:first-child,
+      body > h4:first-child,
+      body > h5:first-child,
+      body > h6:first-child {
+        margin-top: 0px;
+        padding-top: 0px;
+      }
+      h1 p,
+      h2 p,
+      h3 p,
+      h4 p,
+      h5 p,
+      h6 p {
+        margin-top: 0px;
+      }
+      li p.first {
+        display: inline-block;
+      }
+      ol,
+      ul {
+        padding-left: 30px;
+      }
+      ol:first-child,
+      ul:first-child {
+        margin-top: 0px;
+      }
+      ol:last-child,
+      ul:last-child {
+        margin-bottom: 0px;
+      }
+      blockquote {
+        border-left: 4px dotted rgb(229, 232, 232);
+        padding: 0px 12px;
+        color: rgb(68, 68, 68);
+        font-size: 0.9em;
+      }
+      blockquote blockquote {
+        padding-right: 0px;
+      }
+      table {
+        padding: 0px;
+        word-break: initial;
+      }
+      table tr {
+        border-top: 1px solid rgb(218, 223, 230);
+        margin: 0px;
+        padding: 0px;
+      }
+      table.md-table tr:nth-child(2n) {
+        background-color: rgb(250, 251, 252);
+      }
+      table tr td,
+      table tr th {
+        border: 1px solid rgb(218, 223, 230);
+        text-align: left;
+        margin: 0px;
+        padding: 6px 13px;
+      }
+      table tr td:first-child,
+      table tr th:first-child {
+        margin-top: 0px;
+      }
+      table tr td:last-child,
+      table tr th:last-child {
+        margin-bottom: 0px;
+      }
+      .CodeMirror-gutters {
+        border-right: 1px solid rgb(221, 221, 221);
+      }
+      .md-fences,
+      code,
+      tt {
+        font-size: 90%;
+        border-radius: 3px;
+        font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, Courier,
+          monospace, "PingFang SC", "Microsoft YaHei", 微软雅黑;
+      }
+      code,
+      tt {
+        margin: 0px 2px;
+        padding: 2px 4px;
+        background-color: rgb(226, 240, 255);
+      }
+      .md-fences {
+        background-color: rgb(246, 248, 250);
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding: 12px 1em;
+      }
+      .md-task-list-item > input {
+        margin-left: -1.45em;
+        margin-top: calc(1em - 10px);
+      }
+      @media print {
+        body {
+          font-size: 11px;
+          font-weight: 400;
+        }
+        pre,
+        table {
+          break-inside: avoid;
+        }
+        pre {
+          word-wrap: break-word;
+        }
+      }
+      #write pre.md-meta-block {
+        padding: 1rem;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: rgb(247, 250, 246);
+        border: 0px;
+        border-radius: 3px;
+        color: rgb(119, 119, 119);
+        margin-top: 0px !important;
+      }
+      .mathjax-block > .code-tooltip {
+        bottom: 0.375rem;
+      }
+      #write > h3.md-focus::before {
+        left: -1.5625rem;
+        top: 0.375rem;
+      }
+      #write > h4.md-focus::before,
+      #write > h5.md-focus::before,
+      #write > h6.md-focus::before {
+        left: -1.5625rem;
+        top: 0.285714rem;
+      }
+      .md-image > .md-meta {
+        border: 1px solid rgb(221, 221, 221);
+        border-radius: 3px;
+        font-family: "SF Mono", Consolas, "PingFang SC", "Liberation Mono",
+          Courier, monospace, "Microsoft YaHei", 微软雅黑;
+        padding: 2px 4px 0px;
+        font-size: 0.9em;
+        color: inherit;
+      }
+      .md-tag {
+        color: inherit;
+      }
+      .md-toc {
+        margin-top: 20px;
+        padding-bottom: 20px;
+      }
+      .sidebar-tabs {
+        border-bottom: none;
+      }
+      #typora-quick-open {
+        border: 1px solid rgb(221, 221, 221);
+        background-color: rgb(248, 248, 248);
+      }
+      #typora-quick-open-item {
+        background-color: rgb(250, 250, 250);
+        border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229)
+          rgb(238, 238, 238);
+        border-style: solid;
+        border-width: 1px;
+      }
+      .typora-quick-open-item {
+        padding-top: 3px;
+      }
+      .typora-quick-open-list {
+        margin-top: 4px;
+      }
+      .typora-quick-open-item-path {
+        margin-top: -2px;
+      }
+      #md-notification::before {
+        top: 10px;
+      }
+      .on-focus-mode blockquote {
+        border-left-color: rgba(85, 85, 85, 0.12);
+      }
+      .context-menu,
+      .megamenu-content,
+      footer,
+      header {
+        font-family: "SF UI Text", "PingFang SC", -apple-system,
+          -apple-system-body, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+          微软雅黑, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .file-node-content:hover .file-node-icon,
+      .file-node-content:hover .file-node-open-state {
+        visibility: visible;
+      }
+      .mac-seamless-mode #typora-sidebar {
+        background-color: var(--side-bar-bg-color);
+      }
+      .md-lang {
+        color: rgb(180, 101, 77);
+      }
+      .pin-outline #outline-content .outline-active strong,
+      .pin-outline .outline-active {
+        color: rgb(35, 35, 35);
+        font-weight: 600;
+      }
+      .outline-label {
+        color: rgb(100, 100, 100);
+        font-weight: 400;
+      }
+      .file-list-item-summary {
+        font-family: "SF UI Text", "PingFang SC", -apple-system,
+          -apple-system-body, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+          微软雅黑, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      b,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      strong {
+        font-weight: 600;
+      }
+      h1,
+      table tr th {
+        font-weight: 400;
+      }
+      .file-list-item-file-name {
+        font-weight: 500;
+      }
+
       .typora-export li,
       .typora-export p,
       .typora-export,
@@ -688,11 +1079,11 @@
       }
     </style>
   </head>
-  <body class="typora-export">
+  <body class="typora-export os-windows">
     <div id="write" class="is-node">
-      <h1><a name="header-n759" class="md-header-anchor "></a>KPP</h1>
+      <h1><a name="header-n2" class="md-header-anchor "></a>KPP</h1>
       <h2>
-        <a name="header-n761" class="md-header-anchor "></a>Zakres czynności
+        <a name="header-n4" class="md-header-anchor "></a>Zakres czynności
       </h2>
       <p>
         <strong>BLS</strong> - basic life support<br /><strong>ILTS</strong> -
@@ -706,50 +1097,53 @@
         - American Heart Association
       </p>
       <p><strong>Ratownik KPP</strong> może podać 47 leków.</p>
-      <h2><a name="header-n764" class="md-header-anchor "></a>Karteki</h2>
+      <h2><a name="header-n7" class="md-header-anchor "></a>Karetki</h2>
       <p>
-        S - specjalistyczne (lekarz + 2 ratowników/lekarz + pielęgniarka)<br />P
-        - podstawowa (2 ratowników)<br />N - neonatologiczna (dla dzieci)<br />T
-        - transportowa
+        <strong>S</strong> - specjalistyczne (lekarz + 2 ratowników/lekarz +
+        pielęgniarka)<br /><strong>P</strong> - podstawowa (2 ratowników)<br /><strong
+          >N</strong
+        >
+        - neonatologiczna (dla dzieci)<br /><strong>T</strong> - transportowa
       </p>
       <p>Stay and fight / Load and go</p>
       <p><strong>Mediana</strong> dojazdu od miejsca wypadku:</p>
       <ul>
-        <li>teren zabudowany - 8min</li>
-        <li>poza miastem - 15min</li>
+        <li>teren zabudowany - <strong>8min</strong></li>
+        <li>poza miastem - <strong>15min</strong></li>
       </ul>
-      <h3><a name="header-n773" class="md-header-anchor "></a>Kody pilne</h3>
+      <h3><a name="header-n16" class="md-header-anchor "></a>Kody pilne</h3>
       <p>
-        <strong>1</strong> - do 7 min karekta<br /><strong>2</strong> - do 20
-        min karekta
+        <strong>1</strong> - do <em>7 min</em> karekta<br /><strong>2</strong> -
+        do <em>20 min</em> karekta
       </p>
-      <h2><a name="header-n775" class="md-header-anchor "></a>Złota godzina</h2>
-      <p>Od momentu urazu, a nie telefonu.</p>
+      <h2><a name="header-n18" class="md-header-anchor "></a>Złota godzina</h2>
+      <p>Od momentu <strong>urazu</strong>, a nie telefonu.</p>
       <h2>
-        <a name="header-n777" class="md-header-anchor "></a>Platynowe 10 minut
+        <a name="header-n20" class="md-header-anchor "></a>Platynowe 10 minut
       </h2>
       <p><strong>ABC resustytacji</strong></p>
       <p>
         <strong>A</strong> - airway - rękoczyn czoło żuchwa<br /><strong
           >B</strong
         >
-        - breathing ocena oddechu (10sec)<br /><strong>C</strong> - circulation
-        - RKO 30:2<br /><strong>D</strong> - defibrylacja<br /><strong
-          >E</strong
+        - breathing ocena oddechu (<strong>10sec</strong>)<br /><strong
+          >C</strong
         >
-        - electroshock / everything else
+        - circulation - <strong>RKO 30:2</strong><br /><strong>D</strong> -
+        defibrylacja<br /><strong>E</strong> - electroshock / everything else
       </p>
       <h2>
-        <a name="header-n780" class="md-header-anchor "></a>Łańcuch przeżycia
+        <a name="header-n23" class="md-header-anchor "></a>Łańcuch przeżycia
       </h2>
-      <ol start="">
-        <li>wezwanie pomocy</li>
-        <li>wczesne CPR</li>
-        <li>wczesna defibrylacja</li>
-        <li>wczesna pomoc specjalistyczna</li>
-      </ol>
+      <p>
+        <strong>1.</strong> wezwanie pomocy<br /><strong>2.</strong> wczesne
+        CPR<br /><strong>3.</strong> wczesna defibrylacja<br /><strong
+          >4.</strong
+        >
+        wczesna pomoc specjalistyczna
+      </p>
       <h2>
-        <a name="header-n789" class="md-header-anchor "></a>Ocena świadomości
+        <a name="header-n25" class="md-header-anchor "></a>Ocena świadomości
       </h2>
       <p>
         <strong>S</strong> - świadomość<br /><strong>O</strong> - oddech<br /><strong
@@ -757,13 +1151,13 @@
         >
         - skóra
       </p>
-      <h2><a name="header-n792" class="md-header-anchor "></a>Skala AVPU</h2>
+      <h2><a name="header-n27" class="md-header-anchor "></a>Skala AVPU</h2>
       <p>
         <strong>A</strong> - alert - osoba świadoma<br /><strong>V</strong> -
         voice - reaguje na głos<br /><strong>P</strong> - pain - reaguje na
         ból<br /><strong>U</strong> - unresponsive - brak reakcji
       </p>
-      <h2><a name="header-n794" class="md-header-anchor "></a>Wywiad SAMPLE</h2>
+      <h2><a name="header-n29" class="md-header-anchor "></a>Wywiad SAMPLE</h2>
       <p>
         <strong>S</strong> - sytuacja - oceń sytauację<br /><strong>A</strong> -
         alergie - usuń alergeny<br /><strong>M</strong> - medykamenty - leki
@@ -774,10 +1168,10 @@
         eventualne okoliczności zdarzenia
       </p>
       <h2>
-        <a name="header-n796" class="md-header-anchor "></a>Wezwanie pomocy
+        <a name="header-n31" class="md-header-anchor "></a>Wezwanie pomocy
       </h2>
       <h3>
-        <a name="header-n797" class="md-header-anchor "></a>Numery ratunkowe
+        <a name="header-n32" class="md-header-anchor "></a>Numery ratunkowe
       </h3>
       <p>
         <strong>112</strong> - CPR (centrum powiadomienia ratunkowego)<br /><strong
@@ -786,7 +1180,7 @@
         - pogotowie ratunkowe<br /><strong>998</strong> - państwowa straz
         pożarna<br /><strong>997</strong> - policja
       </p>
-      <h3><a name="header-n799" class="md-header-anchor "></a>Rozmowa</h3>
+      <h3><a name="header-n34" class="md-header-anchor "></a>Rozmowa</h3>
       <ul>
         <li><strong>Co?</strong> - co sie stało?</li>
         <li><strong>Komu?</strong> - ile jest poszkodowanych i kto?</li>
@@ -796,7 +1190,7 @@
         <li>Nie rozłączaj się, czekaj na instrukcję lub pytania</li>
       </ul>
       <h2>
-        <a name="header-n809" class="md-header-anchor "></a>Środki ochrony
+        <a name="header-n44" class="md-header-anchor "></a>Środki ochrony
         osobistej
       </h2>
       <ul>
@@ -810,9 +1204,9 @@
         >
         - odpowiedni poziom cukru
       </p>
-      <h2><a name="header-n818" class="md-header-anchor "></a>Układ nerwowy</h2>
+      <h2><a name="header-n53" class="md-header-anchor "></a>Układ nerwowy</h2>
       <h3>
-        <a name="header-n819" class="md-header-anchor "></a>Ośrodkowy układ
+        <a name="header-n54" class="md-header-anchor "></a>Ośrodkowy układ
         nerwowy (CUN)
       </h3>
       <ul>
@@ -822,13 +1216,14 @@
         <li>podniebienie</li>
         <li>szczelina - środkowa linia na podniebieniu</li>
       </ul>
-      <h4><a name="header-n830" class="md-header-anchor "></a>Symtomy</h4>
+      <h4><a name="header-n66" class="md-header-anchor "></a>Symtomy</h4>
       <p>
-        Śińce okularowe i objaw Battle&#39;a wystepują przy uszkodzeniu
-        czaszkowym - nie ruszamy, stabilizujemy, kontakt z pacjentem.
+        <strong>Śińce okularowe</strong> i
+        <strong>objaw Battle&#39;a</strong> wystepują przy uszkodzeniu
+        <em>czaszkowym</em> - nie ruszamy, stabilizujemy, kontakt z pacjentem.
       </p>
       <h3>
-        <a name="header-n833" class="md-header-anchor "></a>Obwodowy układ
+        <a name="header-n68" class="md-header-anchor "></a>Obwodowy układ
         nerwowy (OUN)
       </h3>
       <ul>
@@ -838,68 +1233,74 @@
         <li>unerwienie skóry</li>
       </ul>
       <h4>
-        <a name="header-n842" class="md-header-anchor "></a>7 kręgów szyjnych
-        (C)
+        <a name="header-n78" class="md-header-anchor "></a>7 kręgów szyjnych (C)
       </h4>
       <ul>
         <li>12 kręgów piersiowych</li>
         <li>5 kręgów lędźwiowych</li>
         <li>5 kręgów krzyżowych</li>
       </ul>
-      <p>W głowie mamy układ:</p>
+      <h4>
+        <a name="header-n86" class="md-header-anchor "></a>W głowie mamy układ:
+      </h4>
       <ul>
         <li>przywspółczulny</li>
         <li>parasympatyczny</li>
       </ul>
-      <p>Międzyżebra:</p>
+      <h4><a name="header-n92" class="md-header-anchor "></a>Międzyżebra:</h4>
       <ul>
         <li>linia pachwowa</li>
         <li>środek obojczyka (w to miejsce wbijamy grubą igłę)</li>
       </ul>
       <p>
-        Do 5 przestrzeni między żebrami - penetrowane są płuca. Poniżej 6 (i od
-        niej) to narządy.
+        Do <strong>5</strong> przestrzeni między żebrami - penetrowane są
+        <em>płuca</em>. Poniżej <strong>6</strong> (i od niej) to
+        <em>narządy</em>.
       </p>
       <h2>
-        <a name="header-n864" class="md-header-anchor "></a>Kobiety w ciąży
+        <a name="header-n99" class="md-header-anchor "></a>Kobiety w ciąży
       </h2>
-      <p>Pozycja boczna ustalona na lewym boku.</p>
+      <p>Pozycja boczna ustalona na <strong>lewym</strong> boku.</p>
       <h2>
-        <a name="header-n866" class="md-header-anchor "></a>Funkcje niektórych
+        <a name="header-n101" class="md-header-anchor "></a>Funkcje niektórych
         narządów
       </h2>
       <ol start="">
         <li>
-          Nadnercza - produkują adrenalinę i dopaminę. Znajduja się pomiędzy kr.
-          lędźwiowymi i kr. krzyżowymi.
+          Nadnercza - produkują <em>adrenalinę</em> i <em>dopaminę</em>.
+          Znajduja się pomiędzy <em>kr. lędźwiowymi</em> i
+          <em>kr. krzyżowymi</em>.
         </li>
       </ol>
-      <h2><a name="header-n870" class="md-header-anchor "></a>Złamania</h2>
+      <h2><a name="header-n105" class="md-header-anchor "></a>Złamania</h2>
       <ol start="">
-        <li>Miednicy - odrazu zawiązujemy, ubytek do 4l krwi.</li>
         <li>
-          Kości udowej - ubytek do 3l krwi. Szyjka kości udowej najczęściej
-          łamie się u dzieci i osób starszych.
+          <strong>Miednicy</strong> - odrazu zawiązujemy, ubytek do
+          <strong>4l</strong> krwi.
+        </li>
+        <li>
+          <strong>Kości udowej</strong> - ubytek do <strong>3l</strong> krwi.
+          Szyjka kości udowej najczęściej łamie się u dzieci i osób starszych.
         </li>
       </ol>
-      <h2><a name="header-n876" class="md-header-anchor "></a>Mięśnie</h2>
+      <h2><a name="header-n111" class="md-header-anchor "></a>Mięśnie</h2>
       <h3>
-        <a name="header-n877" class="md-header-anchor "></a>Autonomiczny układ
+        <a name="header-n112" class="md-header-anchor "></a>Autonomiczny układ
         nerwowy
       </h3>
       <p>Działa bez naszej woli.<br />Mięśnie gładkie.</p>
       <h3>
-        <a name="header-n879" class="md-header-anchor "></a>Narządy które możemy
+        <a name="header-n114" class="md-header-anchor "></a>Narządy które możemy
         kontrolować
       </h3>
       <p>
         Mięśnie poprzecznie prażkowane - miofibryle - czerwone i białe włókna.
       </p>
       <h2>
-        <a name="header-n881" class="md-header-anchor "></a>Układ oddechowy
+        <a name="header-n116" class="md-header-anchor "></a>Układ oddechowy
       </h2>
       <h3>
-        <a name="header-n882" class="md-header-anchor "></a>Górne drogi
+        <a name="header-n117" class="md-header-anchor "></a>Górne drogi
         oddechowe
       </h3>
       <ul>
@@ -907,7 +1308,7 @@
         <li>jama ustna</li>
       </ul>
       <h3>
-        <a name="header-n887" class="md-header-anchor "></a>Dolne drogi
+        <a name="header-n122" class="md-header-anchor "></a>Dolne drogi
         oddechowe
       </h3>
       <ul>
@@ -916,25 +1317,25 @@
         <li>oskrzela</li>
         <li>płuca</li>
       </ul>
-      <h3><a name="header-n898" class="md-header-anchor "></a>Powietrze</h3>
+      <h3><a name="header-n133" class="md-header-anchor "></a>Powietrze</h3>
       <ul>
-        <li>21% tlen</li>
-        <li>78% azot</li>
+        <li><strong>21% </strong>tlen</li>
+        <li><strong>78%</strong> azot</li>
       </ul>
-      <h3><a name="header-n904" class="md-header-anchor "></a>Płuca</h3>
+      <h3><a name="header-n139" class="md-header-anchor "></a>Płuca</h3>
       <ul>
         <li>Prawa strona - 3 płaty płucne</li>
         <li>Lewa strona - 2 płaty płucne (bo serce)</li>
       </ul>
-      <p>Manewr Sellicka - gdy ktoś się dusi / dławi.</p>
+      <p><strong>Manewr Sellicka</strong> - gdy ktoś się dusi / dławi.</p>
       <h3>
-        <a name="header-n911" class="md-header-anchor "></a>Choroba nurkowa
+        <a name="header-n146" class="md-header-anchor "></a>Choroba nurkowa
       </h3>
       <p>W stawach kolanowych i łokciowych zbiera się azot.</p>
-      <p>I stopnia - azot w krwiobiegu.</p>
+      <p><strong>I stopnia</strong> - <em>azot</em> w krwiobiegu.</p>
       <p>Więcej w &quot;ABC nurkowania&quot;</p>
       <h2>
-        <a name="header-n915" class="md-header-anchor "></a>Parametry oddechu
+        <a name="header-n150" class="md-header-anchor "></a>Parametry oddechu
       </h2>
       <figure>
         <table>
@@ -965,22 +1366,35 @@
         </table>
       </figure>
       <h2>
-        <a name="header-n933" class="md-header-anchor "></a>Układ krwionośny
+        <a name="header-n168" class="md-header-anchor "></a>Układ krwionośny
       </h2>
       <p>
-        1/14 wagi ciała to ilość krwi.<br />Ubytek 1/4 doprowadza do wstrządu.
+        <strong>1/14</strong> wagi ciała to ilość krwi.<br />Ubytek
+        <strong>1/4</strong> doprowadza do wstrządu.
       </p>
-      <h2><a name="header-n935" class="md-header-anchor "></a>Serce</h2>
-      <p>Posiada 4 komory.</p>
+      <h2><a name="header-n170" class="md-header-anchor "></a>Serce</h2>
+      <p>Posiada <strong>4</strong> komory.</p>
       <p>
-        P. komora i L. przedsionek - płuca.<br />L. komora i P. przedsionek -
-        cały organizm.
+        P. komora i L. przedsionek - <em>płuca</em>.<br />L. komora i P.
+        przedsionek - <em>cały organizm</em>.
       </p>
-      <h3><a name="header-n938" class="md-header-anchor "></a>Frakcja</h3>
-      <p>Poniżej 35 - rozrusznik<br />Poniżej 25 - przeszczep serca</p>
-      <p>Żyły mają cieńsze ściany od tętnic (z cz. ciała do serca).</p>
-      <p>Tętnice posiadają grube i elastyczne ściany (z serca do cz. ciała).</p>
-      <p>Włośniczka łączy tętnice z żyłami, dostarcza tlen do komórek.</p>
+      <h3><a name="header-n173" class="md-header-anchor "></a>Frakcja</h3>
+      <p>
+        Poniżej <strong>35</strong> - rozrusznik<br />Poniżej
+        <strong>25</strong> - przeszczep serca
+      </p>
+      <p>
+        <strong>Żyły</strong> mają <em>cieńsze ściany</em> od tętnic (z cz.
+        ciała do serca).
+      </p>
+      <p>
+        <strong>Tętnice</strong> posiadają <em>grube i elastyczne ściany</em> (z
+        serca do cz. ciała).
+      </p>
+      <p>
+        <strong>Włośniczka</strong> łączy tętnice z żyłami, dostarcza tlen do
+        komórek.
+      </p>
       <figure>
         <table>
           <thead>
@@ -1020,37 +1434,38 @@
       </p>
       <p>
         <strong>Maska brzuszna</strong> - ie wolno bagatelizować - zawał bez
-        bólu, test topniowy szybko wskaże zawał. Ból brzucha.
+        bólu, test topniowy szybko wskaże <em>zawał</em>. <em>Ból brzucha</em>.
       </p>
       <p>
         <strong>Triada Cushinga</strong> - objawy które mogą doprowadzić do
-        udaru lub krwotoku środkowoczaszkowego.
+        <em>udaru</em> lub <em>krwotoku</em> środkowoczaszkowego.
       </p>
       <p>
         <strong>Utrata przytomności</strong> - brak reakcji na głos i ból (+
         wiotkość mięśni)
       </p>
-      <p>Podczas wstrząsu i niewydolności podajemy tlen.</p>
+      <p><strong>Podczas wstrząsu i niewydolności podajemy tlen.</strong></p>
       <p>
         <strong>Epilepsja</strong> - brak reakcji na głos i ból, asekurujemy
         głowę i udrozniamy drigi oddechowe.
       </p>
       <p><strong>Pulsometr</strong> zawsze na palec wskazujący.</p>
-      <h3><a name="header-n971" class="md-header-anchor "></a>Algorytm MONA</h3>
+      <h3><a name="header-n206" class="md-header-anchor "></a>Algorytm MONA</h3>
       <p>
         <strong>M</strong>orfina<br /><strong>O</strong>xygen<br /><strong
           >N</strong
         >intergliceryna<br /><strong>A</strong>spiryna
       </p>
-      <h2><a name="header-n973" class="md-header-anchor "></a>Poparzenia</h2>
-      <p>3 stopnia - powyżej 10%</p>
+      <h2><a name="header-n208" class="md-header-anchor "></a>Poparzenia</h2>
+      <p>III stopnia - powyżej 10%</p>
       <p>1% to dłoń osoby poparzonej</p>
-      <h3><a name="header-n976" class="md-header-anchor "></a>Reguła 9</h3>
+      <h3><a name="header-n211" class="md-header-anchor "></a>Reguła 9</h3>
       <p>
-        głowa i szyja - 9%<br />klatka i brzuch - 18%<br />plecy i barki -
-        18%<br />reka - 9%<br />nogi - 18%
+        głowa i szyja - <strong>9%</strong><br />klatka i brzuch -
+        <strong>18% </strong> plecy i barki - <strong>18% </strong> reka -
+        <strong>9% </strong> nogi - <strong>18%</strong>
       </p>
-      <h2><a name="header-n978" class="md-header-anchor "></a>Algorytm</h2>
+      <h2><a name="header-n213" class="md-header-anchor "></a>Algorytm</h2>
       <ol start="">
         <li>Sprawdź rekacje</li>
         <li>Zawołaj pomoc</li>
@@ -1065,45 +1480,55 @@
         serca.
       </p>
       <h3>
-        <a name="header-n995" class="md-header-anchor "></a>Kiedy nie
+        <a name="header-n230" class="md-header-anchor "></a>Kiedy nie
         przechodzimy do RKO?
       </h3>
       <ol start="">
-        <li>Stęzenie pośmierne (sztywny - trwa 3 doby, potem rozkład)</li>
-        <li>Brak głowy</li>
+        <li>
+          <strong>Stęzenie pośmierne</strong> (sztywny - trwa 3 doby, potem
+          rozkład)
+        </li>
+        <li><strong>Brak głowy</strong></li>
       </ol>
       <p>
-        <strong>Wstrząs anafilaktyczny</strong> - adrenalina 0,3 mg od 10 do 15
-        min można podać 2 taka sama dawkę.
+        <strong>Wstrząs anafilaktyczny</strong> - adrenalina
+        <strong>0,3 mg</strong> od <em>10</em> do <em>15 min</em> można podać
+        <em>2</em> taka sama dawkę.
       </p>
-      <p>Max defibrylator - 360 dżuli (4 dźule na 1 kg masy ciała)</p>
-      <h3><a name="header-n1003" class="md-header-anchor "></a>Tlenoterapia</h3>
       <p>
-        <strong>Czynna</strong> - worek samorosprężalny z filtrem
-        <strong>Bierna</strong> - przytomny bądź nie poprawnie oddycha.
+        Max defibrylator - <strong>360 dżuli</strong> (<em
+          >4 dżule na 1 kg masy ciała</em
+        >)
+      </p>
+      <h3><a name="header-n238" class="md-header-anchor "></a>Tlenoterapia</h3>
+      <p>
+        <strong>Czynna</strong> - worek samorosprężalny z filtrem<br /><strong
+          >Bierna</strong
+        >
+        - przytomny bądź nie poprawnie oddycha.
       </p>
       <p><strong>Saturacja</strong> poniżej 95 - powinno się podac tlen.</p>
       <h3>
-        <a name="header-n1007" class="md-header-anchor "></a>Butla z tlenem
+        <a name="header-n242" class="md-header-anchor "></a>Butla z tlenem
       </h3>
       <p>
         Tylko podmiot leczniczy może zabezpieczać.<br />Tlen tylko na
-        receptę.<br />Zawsze sprawdź stan butli
+        receptę.<br /><em>Zawsze sprawdź stan butli</em>
       </p>
-      <p>Cińnienie 1atm - 996hPa. W butli 20Hpa = 200atm</p>
+      <p>Ciśnienie 1atm - 996hPa. W butli 20hPa = <strong>200atm</strong></p>
       <p><strong>Skale</strong> - 25 / 15 / 12</p>
       <p><strong>Tlen + tłuszcz = wybuch</strong></p>
       <p><strong>50atm w rezerwie</strong></p>
       <p><strong>100atm = 1km pod wodą</strong></p>
       <p>2.7l - standardowa butla ratownicza</p>
-      <h4><a name="header-n1015" class="md-header-anchor "></a>Użytkowanie</h4>
-      <h5><a name="header-n1016" class="md-header-anchor "></a>Początek</h5>
+      <h4><a name="header-n250" class="md-header-anchor "></a>Użytkowanie</h4>
+      <h5><a name="header-n251" class="md-header-anchor "></a>Początek</h5>
       <ol start="">
         <li>Odkręcamy zawór główny</li>
         <li>Ustawiamy skalę na 25</li>
         <li>Podłączamy cewnik do maski</li>
       </ol>
-      <h5><a name="header-n1023" class="md-header-anchor "></a>Zakończenie</h5>
+      <h5><a name="header-n258" class="md-header-anchor "></a>Zakończenie</h5>
       <ol start="">
         <li>Zakręcam główny zawór</li>
         <li>Zakręcam reduktor</li>
