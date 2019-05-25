@@ -24,9 +24,12 @@ Stay and fight / Load and go
 ### Kody pilne
 **1** - do *7 min* karekta  
 **2** - do *20 min* karekta
+
 ## Złota godzina
 Od momentu **urazu**, a nie telefonu.
+
 ## Platynowe 10 minut
+
 **ABC resustytacji**
 
 **A** - airway - rękoczyn czoło żuchwa  
@@ -34,20 +37,53 @@ Od momentu **urazu**, a nie telefonu.
 **C** - circulation - **RKO 30:2**  
 **D** - defibrylacja  
 **E** - electroshock / everything else
+
 ## Łańcuch przeżycia
 **1.** wezwanie pomocy  
 **2.** wczesne CPR  
 **3.** wczesna defibrylacja  
 **4.** wczesna pomoc specjalistyczna  
+
 ## Ocena świadomości
 **S** - świadomość  
 **O** - oddech  
 **S** - skóra  
+
 ## Skala AVPU
 **A** - alert - osoba świadoma  
 **V** - voice - reaguje na głos  
 **P** - pain - reaguje na ból  
 **U** - unresponsive - brak reakcji
+
+## Skala Glasgow
+### Otwieranie oczu 
+- 4 punkty - spontaniczne 
+- 3 punkty - na polecenie 
+- 2 punkty - na bodziec bólowy 
+- 1 punkt - nie otwiera oczu 
+
+### Kontakt słowny: 
+- 5 punktów - odpowiedzi logiczne z zachowaną orientacją miejsca, czasu i własnej osoby 
+- 4 punkty - odpowiedź splątana, chaotyczna, jednak uwaga jest zachowana, a poszkodowany zastanawia się nad odpowiedzią 
+- 3 punkty - odpowiedź bez związku, nie na temat lub krzyk 
+- 2 punkty- niezrozumiałe dźwięki, pojękiwanie 
+- 1 punkt - żaden 
+
+### Reakcja ruchowa: 
+- 6 punktów - odpowiednia do poleceń słownych lub migowych ( np. uściśnięcie dłoni ) 
+- 5 punktów- celowa, dobrze lokalizująca ból 
+- 4 punkty - reakcja obronna na ból &#8211; trudna lokalizacja miejsca bólu 
+- 3 punkty - odruch zgięcia (na ból lub spontanicznie), sugerujący odkorowanie 
+- 2 punkty - odruch wyprostny (na ból lub spontanicznie), sugerujący odmóżdżenie 
+- 1 punkt - żadna 
+Można uzyskać od 3 do 15 punktów podczas oceny za pośrednictwem skali Glasgow.
+
+### Wynik testu:
+14 – 15 - Stan dobry, poszkodowany ma zachowaną przytomność z obniżona reaktywnością  
+11 – 13 - Stan średni, półśpiączka, półprzytomny  
+5 – 7 - Stan ciężki, nieprzytomność umiarkowana  
+3 – 4 - Stan krytyczny, głęboka nieprzytomność, możliwe odmóżdżenie  
+
 ## Wywiad SAMPLE
 **S** - sytuacja - oceń sytauację  
 **A** - alergie - usuń alergeny  
@@ -55,6 +91,32 @@ Od momentu **urazu**, a nie telefonu.
 **P** - przebyte choroby - zabiegi operacyjne  
 **L** - lunch (last food) - ostatni posiłek  
 **E** - eventualne okoliczności zdarzenia
+
+## Odwracalne przyczyny zatrzymania krążenia
+
+### 4H
+- **hipoksja** – 100% tlen, sprawdzić rurkę intubacyjną, klp, osłuchać
+- **hipowolemia** – (zbyt mała objętość krwi krążącej), w odwodnieniu i krwotoku, przywrócić objętość śródnaczyniową + operacyjnie zatamować krwotok
+- **hipotermia** - podgrzane płyny i tlen, płukanie ciepłymi płynami, zapobieganie utracie ciepła, glukoza, Wit B1,
+- **hipo/hipreglikemia** - zbyt niski/wysoki poziom cukru we krwi
+
+### 4T
+- **odma prężna** – odbarczyć odmę, + dren do klp, tlen
+-  **tamponada serca** – nakłucie worka osierdziowego lub torakotomia ratunkowa, uzupełnienie osocza, leki inotropowo + : dobutamina
+-  **toksyny** – antidotum, leczenie objawowe
+-  **zator tętnicy płucnej** – leki p/zakrzepowe - heparyna, tlen, dopamina lub inne podwyższające ciśnienie krwi, leczenie trombolityczne – streptokinaza, urokinaza, filtr do ż. Gł. Dolnej, chirurgia
+
+## Oparzenia
+**I stopień** - *15-20min letniej wody*, następnie hydrożel [sucha, bez pęcherzy lub z niewielkim obrzękiem]  
+**II stopień** - schładzamy max 1min [pęcherze]  
+**III stopień** - *nie schładzam*, suche opatrunki lub hydrożel [ sucha, twardy strup]
+
+## Walka z hipotermią
+- **głęboka** - **35-32**°C *(oddech raz na minutę)*   
+**Sprawdzamy oddech raz na minutę!**
+- **ciężka** - **poniżej 32°C**  
+*Migotanie komór*
+
 ## Wezwanie pomocy
 ### Numery ratunkowe
 **112** - CPR (centrum powiadomienia ratunkowego)  
@@ -72,7 +134,6 @@ Od momentu **urazu**, a nie telefonu.
 * okulary ochronne (CE)
 * maseczki z jednokierunkowym przepływem powietrza
   
-
 **SWD** - system wsparcia działań ratownictwa medycznego  
 **0,70-0,90** - odpowiedni poziom cukru
 
@@ -118,6 +179,42 @@ Pozycja boczna ustalona na **lewym** boku.
 ## Złamania
 1. **Miednicy** - odrazu zawiązujemy, ubytek do **4l** krwi.
 2. **Kości udowej** - ubytek do **3l** krwi. Szyjka kości udowej najczęściej łamie się u dzieci i osób starszych.
+
+## Masywne krwotoki
+
+- **tourniquet** - jak najwyżej, najciaśniej (pachwiny)
+- **wound packing** - dociskamy i uciskamy na 3min, następnie opaska uciskowa (barki, szyja, miednica)
+- **chest seal** - na "ślepo" zakleić (klatka piersiowa, plecy)
+- **opaska RAT** - dobra do samoratownictwa, zła na plażę.  
+Nosimy w △ życia!  
+Jeżeli możemy zlokalizować ranę - opaskę zakładamy powyżej brzegu rany 2 cale nad.  
+Nie zakładamy na ubrania
+
+***Opaskę zakładamy na max 2h (1,47)*** - nie dojdzie do zmian *(nie powstaną zakrzepy)*
+
+Do **10 min** nie powstaną zakrzepy jeśli założymy opatrunek o poluźnimy opaskę ale **nigdy nie ściągamy**
+
+**Hydrożel** - chłodzi i posiada środek znieczulający  
+**Szyna do złamań** - "dla ręki tak, dla nogi średnia bo nie zabezpieczy do końca"  
+**Chusty płucienne** - używamy do złamanych kończyn
+
+### Działanie // TODO
+Sprawdź ciepłotę, tętno, kapilarka
+
+1. Wchodzimy kolanem w pachwinę i tętnicę udową
+2. Jestem skierowany do nogi
+3. Aplikuje opaskę
+
+Masywny krwotok z nóg
+1. Wchodzimy kolanem w pachwinę i tętnicę udową
+2. Robimy "kulkę" (skręcamy), wkładamy w ranę i robimy kolejną "trzymamy". Trzymamy 3 min
+
+Krwotok z nosa
+1. Opatrunek na nos, zimny okład na kark oraz głowa pochylona do przodu
+
+
+## Urwane kończyny
+Wkładamy do **18-20°C** wody bądź szczelnie obwijamy kończynę, wkładamy worek do wiadra z zimną wodą
 
 ## Mięśnie
 ### Autonomiczny układ nerwowy
@@ -276,3 +373,10 @@ Ciśnienie 1atm - 996hPa. W butli 20hPa = **200atm**
 ##### Zakończenie
 1. Zakręcam główny zawór
 2. Zakręcam reduktor
+
+### Rękoczyn "Esmercka"
+Udrożenienie dróg oddechowych
+
+## Źródła
+ - http://www.ratownictwo.opole.pl
+ - http://www.ratownik-med.pl/
